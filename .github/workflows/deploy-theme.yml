@@ -1,0 +1,32 @@
+name: Deploy Theme to WPMU DEV
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          if_key_exists: replace
+
+      - name: Deploy theme with rsync
+        run: |
+          rsync -az --delete \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            --exclude '.github' \
+            --exclude '.DS_Store' \
+            ./ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:site/public_html/wp-content/themes/Eisberg/
+
+      - name: Clear WPMU DEV static cache
+        run: echo 'wp hosting clearcache static' | ssh -T ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
