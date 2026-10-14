@@ -578,7 +578,7 @@ add_shortcode( 'Eisberg_Price', 'eisberg_static_price_shortcode' );
 /**
  * Process custom WooCommerce registration + AffiliateWP signup referral
  */
-add_action( 'template_redirect', 'process_custom_wc_registration', 5 );
+//add_action( 'template_redirect', 'process_custom_wc_registration', 5 );
 
 function process_custom_wc_registration() {
 
