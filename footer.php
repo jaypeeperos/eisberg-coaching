@@ -1,4 +1,4 @@
-<footer class="site-footer test-footer-class">
+<footer class="site-footer">
     <div class="site-footer-inner container">
         <span>Eisberg</span>
         <div>
