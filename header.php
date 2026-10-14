@@ -10,7 +10,7 @@ $is_front = is_front_page();
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div class="site-shell">
-<header class="site-header starry-background test-header-class">
+<header class="site-header starry-background">
     <?php if (has_custom_logo()) : the_custom_logo(); else : ?><a class="site-brand" href="<?php echo esc_url(home_url('/')); ?>"><span class="site-brand-text">Eisberg</span></a><?php endif; ?>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-menu" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
