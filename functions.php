@@ -1012,3 +1012,15 @@ function eisberg_force_default_language_on_clean_url() {
     $TRP_LANGUAGE = $default_lang;
 }
 add_action( 'init', 'eisberg_force_default_language_on_clean_url', 5 );
+
+/**
+ * Auto-convert empty WOOCS fixed price fields using live exchange rates.
+ */
+add_filter('woocs_fixed_raw_perp', function($is_empty, $product_id, $currency, $type) {
+    // If the fixed price field for the current currency is empty,
+    // tell WOOCS to fall back to the live auto-calculated conversion rate.
+    if ($is_empty) {
+        return false;
+    }
+    return $is_empty;
+}, 10, 4);
