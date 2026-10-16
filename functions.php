@@ -1043,6 +1043,9 @@ add_action( 'wp_footer', function() {
 
             wp.i18n.setLocaleData({
                 'Total due today'           : ['Heute fälliger Gesamtbetrag'],
+                'Total'                     : ['Gesamtbetrag'],
+                'Details'                   : ['Details'],
+                'I want to receive updates about products and promotions.' : ['Ich möchte Updates über Produkte und Angebote erhalten.'],
                 'Yearly recurring total'    : ['Jährlich wiederkehrender Gesamtbetrag'],
                 'Starting'                  : ['Beginn'],
                 'Starting: %1$s'            : ['Beginn: %1$s'],
