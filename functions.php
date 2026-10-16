@@ -1058,6 +1058,7 @@ function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
         'Total'                   => 'Gesamt',
         'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.' => 'Ihre persönlichen Daten werden verwendet, um Ihre Bestellung zu bearbeiten, Ihre Erfahrung auf dieser Website zu unterstützen und für andere in unserer %s beschriebenen Zwecke.',
         'Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our %s.' => 'Ihre persönlichen Daten werden verwendet, um Ihre Erfahrung auf dieser Website zu unterstützen, den Zugriff auf Ihr Konto zu verwalten und für andere in unserer %s beschriebenen Zwecke.',
+        'I want to receive updates about products and promotions.' => 'Ich möchte Updates zu Produkten und Aktionen erhalten.',
 
     );
 
