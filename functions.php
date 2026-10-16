@@ -1026,27 +1026,44 @@ add_filter('woocs_fixed_raw_perp', function($is_empty, $product_id, $currency, $
 }, 10, 4);
 
 /**
- * Translate specific WooCommerce Subscriptions strings to German (Switzerland)
+ * Force Swiss German translations for WooCommerce Subscriptions
+ * Works with TranslatePress + Checkout Blocks
  */
-add_filter( 'gettext', 'translate_wcs_strings_to_swiss_german', 20, 3 );
-add_filter( 'ngettext', 'translate_wcs_strings_to_swiss_german', 20, 3 );
-
-function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
-
-    // Only run for WooCommerce / Subscriptions related domains
-    /*if ( ! in_array( $domain, array( 'woocommerce', 'woocommerce-subscriptions', 'woocommerce-subscriptions-gifting' ), true ) ) {
-        return $translated;
-    }*/
-
-    $translations = array(
-        'Total due today'          => 'Heute fälliger Gesamtbetrag',
-        'Yearly recurring total'   => 'Jährlich wiederkehrender Gesamtbetrag',
-        'Starting'                 => 'Beginn',
-    );
-
-    if ( isset( $translations[ $text ] ) ) {
-        return $translations[ $text ];
+add_action( 'wp_footer', function() {
+    if ( ! is_cart() && ! is_checkout() ) {
+        return;
     }
+    ?>
+    <script>
+    (function() {
+        function applyTranslations() {
+            if ( typeof wp === 'undefined' || !wp.i18n || !wp.i18n.setLocaleData ) {
+                return false;
+            }
 
-    return $translated;
-}
+            wp.i18n.setLocaleData({
+                'Total due today'           : ['Heute fälliger Gesamtbetrag'],
+                'Yearly recurring total'    : ['Jährlich wiederkehrender Gesamtbetrag'],
+                'Starting'                  : ['Beginn'],
+                'Starting: %1$s'            : ['Beginn: %1$s'],
+                'Monthly recurring total'   : ['Monatlich wiederkehrender Gesamtbetrag'],
+                'Weekly recurring total'    : ['Wöchentlich wiederkehrender Gesamtbetrag'],
+                'Daily recurring total'     : ['Täglich wiederkehrender Gesamtbetrag']
+            }, 'woocommerce-subscriptions');
+
+            return true;
+        }
+
+        // Try immediately
+        if ( !applyTranslations() ) {
+            // Keep trying until wp.i18n is ready
+            const interval = setInterval(function() {
+                if ( applyTranslations() ) {
+                    clearInterval(interval);
+                }
+            }, 100);
+        }
+    })();
+    </script>
+    <?php
+}, 5);
