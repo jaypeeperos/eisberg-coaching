@@ -1,7 +1,18 @@
 <?php
 /**
- * Checkout Form - Eisberg custom layout
- * Order summary on the right side
+ * Checkout Form
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/checkout/form-checkout.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ * @version 9.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -23,7 +34,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 		<div class="eisberg-checkout-grid">
 
-			<!-- LEFT COLUMN: Billing + Additional -->
+			<!-- LEFT COLUMN -->
 			<div class="eisberg-checkout-left">
 				<div id="customer_details">
 					<div class="woocommerce-billing-fields">
@@ -34,13 +45,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 					</div>
 
-					<div class="woocommerce-additional-fields">
-						<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
-					</div>
+					<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 				</div>
 			</div>
 
-			<!-- RIGHT COLUMN: Order Summary (sticky) -->
+			<!-- RIGHT COLUMN (Order Summary) -->
 			<div class="eisberg-checkout-right">
 				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
 				
