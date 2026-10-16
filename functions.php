@@ -1024,3 +1024,22 @@ add_filter('woocs_fixed_raw_perp', function($is_empty, $product_id, $currency, $
     }
     return $is_empty;
 }, 10, 4);
+
+/**
+ * Translate specific WooCommerce Subscriptions strings to German (Switzerland)
+ */
+add_filter( 'gettext', 'translate_wcs_strings_to_swiss_german', 20, 99 );
+add_filter( 'ngettext', 'translate_wcs_strings_to_swiss_german', 20, 99 );
+
+function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
+
+    $translations = array(
+        'Order details'          => 'Bestelldetails',
+    );
+
+    if ( isset( $translations[ $text ] ) ) {
+        return $translations[ $text ];
+    }
+
+    return $translated;
+}
