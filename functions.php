@@ -1036,8 +1036,9 @@ function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
     $translations = array(
         'Order details'          => 'Bestelldetails',
         'Discount:'                => 'Rabatt:',
-        'Total:'                   => 'Total:',
-        'Product'                 => 'Produkt'
+        'Total:'                   => 'Gesamt:',
+        'Product'                 => 'Produkt',
+        'Total'                   => 'Gesamt'
     );
 
     if ( isset( $translations[ $text ] ) ) {
