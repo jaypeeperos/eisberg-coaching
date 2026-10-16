@@ -1034,9 +1034,9 @@ add_filter( 'ngettext', 'translate_wcs_strings_to_swiss_german', 20, 3 );
 function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
 
     // Only run for WooCommerce / Subscriptions related domains
-    if ( ! in_array( $domain, array( 'woocommerce', 'woocommerce-subscriptions', 'woocommerce-subscriptions-gifting' ), true ) ) {
+    /*if ( ! in_array( $domain, array( 'woocommerce', 'woocommerce-subscriptions', 'woocommerce-subscriptions-gifting' ), true ) ) {
         return $translated;
-    }
+    }*/
 
     $translations = array(
         'Total due today'          => 'Heute fälliger Gesamtbetrag',
