@@ -21,6 +21,10 @@ body.woocommerce-checkout {
   font-family: Poppins, sans-serif;
 }
 
+.narrow {
+    width: min(1200px, calc(100% - 56px));
+}
+
 /* ===== Two Column Grid ===== */
 .eisberg-checkout-grid {
   display: grid;
