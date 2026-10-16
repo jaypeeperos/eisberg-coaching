@@ -21,12 +21,6 @@ body.woocommerce-checkout {
   font-family: Poppins, sans-serif;
 }
 
-.woocommerce {
-  max-width: 1140px;
-  margin: 48px auto 80px;
-  padding: 0 28px;
-}
-
 /* ===== Two Column Grid ===== */
 .eisberg-checkout-grid {
   display: grid;
@@ -79,7 +73,7 @@ body.woocommerce-checkout {
   border: 1px solid var(--line);
   border-left: 4px solid var(--teal);
   border-radius: 16px;
-  padding: 16px 20px;
+  padding: 16px 20px 16px 57px;
   color: var(--ink);
   font-size: 15px;
   margin-bottom: 24px;
