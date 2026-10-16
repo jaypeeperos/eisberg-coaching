@@ -1,0 +1,310 @@
+/* ======================================================
+   Eisberg Checkout - Two Column Layout
+   Order summary on the right (sticky)
+   ====================================================== */
+
+:root {
+  --navy: #0e1d2e;
+  --navy-soft: #16304a;
+  --ink: #0f3b5c;
+  --body: #46505a;
+  --teal: #0f7f7a;
+  --teal-light: #7fd0c9;
+  --yellow: #f8dd6e;
+  --paper: #fbfaf7;
+  --line: #e8e5de;
+}
+
+body.woocommerce-checkout {
+  background: var(--paper);
+  color: var(--body);
+  font-family: Poppins, sans-serif;
+}
+
+.woocommerce {
+  max-width: 1140px;
+  margin: 48px auto 80px;
+  padding: 0 28px;
+}
+
+/* ===== Two Column Grid ===== */
+.eisberg-checkout-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Left column */
+.eisberg-checkout-left {
+  min-width: 0;
+}
+
+#customer_details {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+/* Right column - Order Summary */
+.eisberg-checkout-right {
+  position: sticky;
+  top: 32px;
+}
+
+#order_review_heading {
+  background: #fff;
+  margin: 0;
+  padding: 28px 28px 12px;
+  border: 1px solid var(--line);
+  border-bottom: none;
+  border-radius: 20px 20px 0 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+#order_review {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  padding: 8px 28px 28px;
+}
+
+/* ===== Coupon ===== */
+.woocommerce-form-coupon-toggle .woocommerce-info {
+  background: #f0f7f6;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--teal);
+  border-radius: 16px;
+  padding: 16px 20px;
+  color: var(--ink);
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info a {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+form.checkout_coupon {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+}
+
+form.checkout_coupon input.input-text {
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 13px 16px !important;
+}
+
+form.checkout_coupon button.button {
+  background: var(--navy) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+  padding: 13px 26px !important;
+  font-weight: 600 !important;
+  width: 100%;
+  border: none !important;
+}
+
+/* ===== Form Fields ===== */
+.woocommerce-billing-fields h3,
+.woocommerce-additional-fields h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+
+.woocommerce form .form-row {
+  margin-bottom: 18px;
+}
+
+.woocommerce form .form-row label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.woocommerce form .form-row .required {
+  color: #c0392b;
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select {
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  padding: 13px 16px !important;
+  font-size: 15px !important;
+  background: #fff !important;
+  color: var(--navy) !important;
+  width: 100%;
+  font-family: Poppins, sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.woocommerce form .form-row input.input-text:focus,
+.woocommerce form .form-row textarea:focus {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(15, 127, 122, 0.15) !important;
+  outline: none;
+}
+
+/* Select2 */
+.select2-container--default .select2-selection--single {
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  height: 48px !important;
+  padding: 8px 12px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 30px !important;
+  color: var(--navy) !important;
+  padding-left: 4px !important;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--single {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(15, 127, 122, 0.15) !important;
+}
+
+/* ===== Order Table ===== */
+.woocommerce-checkout-review-order-table {
+  border: none !important;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.woocommerce-checkout-review-order-table th,
+.woocommerce-checkout-review-order-table td {
+  border: none !important;
+  padding: 12px 0 !important;
+  font-size: 14.5px;
+  vertical-align: top;
+}
+
+.woocommerce-checkout-review-order-table thead th {
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line) !important;
+  padding-bottom: 14px !important;
+}
+
+.woocommerce-checkout-review-order-table .product-name {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.woocommerce-checkout-review-order-table .woocommerce-Price-amount {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.woocommerce-checkout-review-order-table .order-total th,
+.woocommerce-checkout-review-order-table .order-total td {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+  border-top: 2px solid var(--line) !important;
+  padding-top: 16px !important;
+}
+
+/* ===== Payment & Button ===== */
+#payment {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.woocommerce-privacy-policy-text {
+  font-size: 13px;
+  color: var(--body);
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.woocommerce-privacy-policy-text a {
+  color: var(--teal);
+}
+
+.automatewoo-optin {
+  margin-bottom: 20px !important;
+}
+
+.automatewoo-optin label {
+  font-size: 14px;
+  color: var(--body);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.automatewoo-optin input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--teal);
+}
+
+#place_order {
+  background: var(--yellow) !important;
+  color: var(--navy) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  padding: 16px 28px !important;
+  border-radius: 999px !important;
+  border: none !important;
+  width: 100%;
+  text-transform: none !important;
+  font-family: Poppins, sans-serif;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+#place_order:hover {
+  background: #f5d55a !important;
+  transform: translateY(-1px);
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 900px) {
+  .eisberg-checkout-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .eisberg-checkout-right {
+    position: static;
+  }
+
+  #customer_details,
+  #order_review_heading,
+  #order_review {
+    padding: 24px 20px;
+  }
+
+  #order_review_heading {
+    border-radius: 16px 16px 0 0;
+  }
+
+  #order_review {
+    border-radius: 0 0 16px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .woocommerce {
+    padding: 0 20px;
+  }
+}

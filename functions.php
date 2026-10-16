@@ -10,9 +10,12 @@ add_action('after_setup_theme', 'eisberg_setup');
 function eisberg_assets() {
     wp_enqueue_style('eisberg-fonts', 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap', array(), null);
     wp_enqueue_style('eisberg-style', get_stylesheet_uri(), array('eisberg-fonts'), '1.0.4');
+    wp_enqueue_style('eisberg-woo-style', get_theme_file_uri('css/woo-style.css'), array('eisberg-style'), '1.0.0');
+
     wp_enqueue_script('eisberg-navigation', get_theme_file_uri('js/navigation.js'), array(), '1.0.0', true);
     wp_enqueue_script('eisberg-region-switcher', get_theme_file_uri('js/region-switcher.js'), array(), '1.0.0', true);
     wp_enqueue_script('eisberg-custom', get_theme_file_uri('js/custom.js'), array('jquery'), '1.0.15', true);
+
 }
 add_action('wp_enqueue_scripts', 'eisberg_assets');
 
