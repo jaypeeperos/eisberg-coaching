@@ -22,6 +22,20 @@ function eisberg_page_url($slug) {
 }
 
 /**
+ * Declare WooCommerce support
+ */
+add_action( 'after_setup_theme', 'eisberg_add_woocommerce_support' );
+
+function eisberg_add_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+    
+    // Optional but recommended:
+    add_theme_support( 'wc-product-gallery-zoom' );
+    add_theme_support( 'wc-product-gallery-lightbox' );
+    add_theme_support( 'wc-product-gallery-slider' );
+}
+
+/**
  * Regions offered in the header switcher. Each one pairs a language with a currency.
  *
  * 'url' is empty while every region is served from this site. Point it at a translated
@@ -1047,3 +1061,4 @@ function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
 
     return $translated;
 }
+
