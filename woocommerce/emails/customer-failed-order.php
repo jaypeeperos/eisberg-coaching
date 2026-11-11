@@ -7,7 +7,7 @@
  *
  * @see https://woocommerce.com/document/template-structure/
  * @package WooCommerce\Templates\Emails
- * @version 10.0.0
+ * @version 10.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -24,7 +24,7 @@ $eisberg_mail_link  = '<a href="mailto:team@eisberg-coaching.com">team@eisberg-c
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <?php echo $email_improvements_enabled ? '<div class="email-introduction">' : ''; ?>
-<p>
+<p style="margin-top: 24px;">
 <?php
 if ( ! empty( $order->get_billing_first_name() ) ) {
 	printf( 'Hallo %s,', esc_html( $order->get_billing_first_name() ) );
