@@ -1045,8 +1045,8 @@ add_filter('woocs_fixed_raw_perp', function($is_empty, $product_id, $currency, $
 /**
  * Translate specific WooCommerce Subscriptions strings to German (Switzerland)
  */
-add_filter( 'gettext', 'translate_wcs_strings_to_swiss_german', 20, 99 );
-add_filter( 'ngettext', 'translate_wcs_strings_to_swiss_german', 20, 99 );
+add_filter( 'gettext', 'translate_wcs_strings_to_swiss_german', 20, 999 );
+add_filter( 'ngettext', 'translate_wcs_strings_to_swiss_german', 20, 999 );
 
 function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
 
@@ -1054,6 +1054,8 @@ function translate_wcs_strings_to_swiss_german( $translated, $text, $domain ) {
         'Order details'          => 'Bestelldetails',
         'Discount:'                => 'Rabatt:',
         'Total:'                   => 'Gesamt:',
+        'Subtotal:'                => 'Zwischensumme:',
+        'Subtotal'                 => 'Zwischensumme',
         'Product'                 => 'Produkt',
         'Total'                   => 'Gesamt',
         'Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our %s.' => 'Ihre persönlichen Daten werden verwendet, um Ihre Bestellung zu bearbeiten, Ihre Erfahrung auf dieser Website zu unterstützen und für andere in unserer %s beschriebenen Zwecke.',
